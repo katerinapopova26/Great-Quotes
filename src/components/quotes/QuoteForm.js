@@ -1,6 +1,5 @@
-import { Fragment } from "react";
-import { useRef, useState } from "react";
-import { Prompt } from "react-router-dom";
+import { Fragment, useRef, useState } from "react";
+// import { Prompt } from 'react-router-dom';
 
 import Card from "../UI/Card";
 import LoadingSpinner from "../UI/LoadingSpinner";
@@ -14,6 +13,8 @@ const QuoteForm = (props) => {
 
   function submitFormHandler(event) {
     event.preventDefault();
+
+    console.log(isEntering);
 
     const enteredAuthor = authorInputRef.current.value;
     const enteredText = textInputRef.current.value;
@@ -33,12 +34,13 @@ const QuoteForm = (props) => {
 
   return (
     <Fragment>
-      <Prompt
+      {/* Prompt is currently not supported yet by v6 */}
+      {/* <Prompt
         when={isEntering}
         message={(location) =>
-          "Are you sure you want to leave? All your entered data will be lost!"
+          'Are you sure you want to leave? All your entered data will be lost!'
         }
-      />
+      /> */}
       <Card>
         <form
           onFocus={formFocusedHandler}
